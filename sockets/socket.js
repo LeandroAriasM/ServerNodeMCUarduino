@@ -31,10 +31,11 @@ io.on('connection', client => {
 
  
 
-    client.on('mensaje', ( payload ) => {
-        console.log('nuevo-mensaje', payload);
-        io.emit( 'nuevo-mensaje', { admin: payload } );
+    client.on('estado', ( payload ) => {
+        console.log('nuevo-estado', payload);
+        io.emit( 'nuevo-estado', { admin: payload } );
     });
+
     client.on('vote-band', ( payload ) => {
         bands.voteBand(payload.id);
         io.emit('active-bands',bands.getBands());
