@@ -32,7 +32,8 @@ io.on('connection', client => {
  
 
     client.on('mensaje', ( payload ) => {
-        console.log('nuevo-mensaje', payload);0000
+        console.log('nuevo-mensaje', payload);
+        io.emit( 'nuevo-mensaje', { admin: payload } );
     });
     client.on('vote-band', ( payload ) => {
         bands.voteBand(payload.id);
