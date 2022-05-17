@@ -33,7 +33,7 @@ io.on('connection', client => {
 
     client.on('estado', ( payload ) => {
         console.log('nuevo-estado', payload);
-        io.emit( 'nuevo-estado', { admin: payload } );
+        io.emit( 'nuevo-estado', { estado: payload } );
     });
 
     client.on('vote-band', ( payload ) => {
