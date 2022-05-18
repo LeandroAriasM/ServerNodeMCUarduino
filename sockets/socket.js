@@ -39,7 +39,7 @@ io.on('connection', client => {
     client.on('Analogico', ( payload ) => {
         console.log('Analogico', payload);
         //io.emit( 'Analogico', { estado: payload } );
-        io.emit( payload );
+        io.emit('Analogico', payload);
     });
 
     client.on('vote-band', ( payload ) => {
