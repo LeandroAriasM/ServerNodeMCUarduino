@@ -36,9 +36,16 @@ io.on('connection', client => {
         io.emit( 'estado', { estado: payload } );
     });
 
+    client.on('Analogico', ( payload ) => {
+        console.log('Analogico', payload);
+        //io.emit( 'Analogico', { estado: payload } );
+        io.emit( payload );
+    });
+
     client.on('vote-band', ( payload ) => {
         bands.voteBand(payload.id);
         io.emit('active-bands',bands.getBands());
+        
     });
 
     // escuchar evento add-band
