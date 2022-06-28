@@ -1,0 +1,3 @@
+ESTE ARCHIVO ESTA CONECTADO CON GIT CON EL PROYECTO 
+ServerNodeMCUAduino
+ultimo commit compu dell
